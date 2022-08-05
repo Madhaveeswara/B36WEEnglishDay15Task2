@@ -1,4 +1,4 @@
-
+// Array of calculator elements which are used to render the calculator on the page
 const calculatorControlsNumbers = [
     [7,8,9,'+'],
     [6,5,4,'-'],
@@ -9,6 +9,8 @@ const calculatorControlsNumbers = [
 let bufferVariable = '';
 
 
+//A class to convert the infix to postfix string in order to evaluate the user input
+//string to accurately calculate the final result.
 class InfixToPostfix {
 
     //Private variables 
@@ -131,7 +133,7 @@ class InfixToPostfix {
 
 }
 
-
+// Evaluate the POSTfix string to do the final calculation.
 function evaluatePostfixExpression(expression) {
 const stackVar = [];
 let res = 0;
@@ -264,7 +266,7 @@ console.log(" *********** keyPressHandler() ************* ")
 }
 
 
-
+//A function to initialize the layout of the page.
 function initialize(){
 
     // Title
@@ -275,7 +277,7 @@ function initialize(){
     //Description
     let pElement = document.createElement("p");
     pElement.setAttribute("id","description");
-    pElement.innerText = "This is a amazing calculator to do simple scientific arithmetic operations";
+    pElement.innerText = "This is an amazing calculator to do simple scientific arithmetic operations";
 
     document.body.append(h1Element,pElement);
 
@@ -321,7 +323,7 @@ function initialize(){
     let buttonLayoutDiv = document.getElementById("button-layout");
     console.log("buttonLayoutDiv",buttonLayoutDiv);
 
-    
+    //Rendering the calculator number and controls.
     calculatorControlsNumbers.forEach((arrayObj) => {
 
            //console.log(" arrayObj ",arrayObj);
@@ -375,6 +377,8 @@ function initialize(){
     });
 }
 
+
+//IIFE for initializing the calculator on the page.
 (function() {
      initialize();
 })();
